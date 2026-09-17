@@ -30,7 +30,6 @@
                                 </p><br />
                                 <field name="date"/>
                                 <field name="contact"/>
-                                <field name="status"/>
                             </group>
                         </group>
                         <hr />
