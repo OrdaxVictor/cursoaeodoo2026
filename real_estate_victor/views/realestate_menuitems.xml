@@ -1,8 +1,7 @@
 <odoo>
     <data>
 
-        <menuitem id="menu_realestate_root" name="Inmobiliaria" sequence="10"
-                  action="action_realestate_property_view"/>
+        <menuitem id="menu_realestate_root" name="Inmobiliaria" sequence="10"/>
 
         <menuitem id="menu_realestate_general_categ" name="General" parent="menu_realestate_root" sequence="0"/>
 
