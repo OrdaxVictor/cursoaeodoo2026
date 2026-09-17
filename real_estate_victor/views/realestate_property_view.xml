@@ -1,8 +1,9 @@
 <odoo>
     <data>
-        <record id="view_real_estate_form" model="ir.ui.view">
-            <field name="name">view.real.chestate.form</field>
-            <field name="model">real.cestate</field>
+
+        <record id="view_realestate_property_form" model="ir.ui.view">
+            <field name="name">view.realestate.property.form</field>
+            <field name="model">realestate.properrty</field>
             <field name="arch" type="xml">
                 <form string="Propiedad">
                     <sheet>
@@ -28,50 +29,44 @@
             </field>
         </record>
 
-        <record id="view_real_estate_tree" model="ir.ui.view">
-            <field name="name">view.real.estate.tree</field>
-            <field name="model">real.restate</field>
+        <record id="view_realestate_property_tree" model="ir.ui.view">
+            <field name="name">view.realestate.property.tree</field>
+            <field name="model">realestate.property</field>
             <field name="arch" type="xml">
-                <tree string="Propiedades">
+                <list string="Propiedades">
                     <field name="name"/>
                     <field name="size"/>
                     <field name="desc"/>
-                </tree>
+                </list>
             </field>
         </record>
 
-        <record id="view_real_estate_search" model="ir.ui.view">
-            <field name="name">view.real.estate.search</field>
-            <field name="model">real.estate</field>
+
+        <record id="view_realestate_property_search" model="ir.ui.view">
+            <field name="name">view.realestate.property.search</field>
+            <field name="model">realestate.property</field>
             <field name="arch" type="xml">
-                <search string="Filtrar viviendas">
+                <search string="Filtrar propiedades">
                     <field name="name"/>
                     <field name="size"/>
                 </search>
             </field>
         </record>
 
-        <record id="action_real_estate_view" model="ir.actions.act_window">
-            <field name="name">Viviendas</field>
+        <record id="action_realestate_property_view" model="ir.actions.act_window">
+            <field name="name">Propiedades</field>
             <field name="type">ir.actions.act_window</field>
-            <field name="res_model">real.estate</field>
+            <field name="res_model">realestate.property</field>
             <field name="view_mode">tree,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    Viviendas
+                    Propiedades
                 </p>
                 <p>
                     Click 'Nuevo' para añadir nuevos elementos
                 </p>
             </field>
         </record>
-
-        <menuitem id="menu_real_root" name="Inmobiliaria" sequence="10"/>
-
-        <menuitem id="menu_real_general_categ" name="General" parent="menu_real_root" sequence="0"/>
-
-        <menuitem id="menu_real_estate" name="Viviendas" parent="menu_real_general_categ" sequence="1"
-                  action="action_real_estate_view"/>
 
     </data>
 </odoo>

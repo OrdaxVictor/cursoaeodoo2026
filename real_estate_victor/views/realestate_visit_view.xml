@@ -1,0 +1,78 @@
+<odoo>
+    <data>
+
+        <record id="view_realestate_visit_form" model="ir.ui.view">
+            <field name="name">view.realestate.visit.form</field>
+            <field name="model">realestate.visit</field>
+            <field name="arch" type="xml">
+                <form string="Visita">
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_left">
+                                <p>
+                                    Datos principales
+                                </p><br />
+                                <field name="name"/>
+                                <field name="property"/>
+                                
+                            </group>
+                            <group name="group_right">
+                                <p>
+                                    Detalles
+                                </p><br />
+                                <field name="date"/>
+                                <field name="contact"/>
+                                <field name="status"/>
+                            </group>
+                        </group>
+                        <hr />
+
+                    </sheet>
+                </form>    
+            </field>
+        </record>
+
+        <record id="view_realestate_visit_tree" model="ir.ui.view">
+            <field name="name">view.realestate.visit.tree</field>
+            <field name="model">realestate.visit</field>
+            <field name="arch" type="xml">
+                <list string="Visitas">
+                    <field name="name"/>
+                    <field name="property"/>
+                    <field name="date"/>
+                    <field name="contact"/>
+                    <field name="status"/>
+                </list>
+            </field>
+        </record>
+
+        <record id="view_realestate_visit_search" model="ir.ui.view">
+            <field name="name">view.realestate.visit.search</field>
+            <field name="model">realestate.visit</field>
+            <field name="arch" type="xml">
+                <search string="Filtrar visitas">
+                    <field name="name"/>
+                    <field name="property"/>
+                    <field name="contact"/>
+                    <field name="status"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_realestate_visit_view" model="ir.actions.act_window">
+            <field name="name">Visitas</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">realestate.visit</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Visitas
+                </p>
+                <p>
+                    Click 'Nuevo' para añadir nuevos elementos
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,3 +1,4 @@
 # -*- coding: utf-8 -*-
 
-from . import real_estate
+from . import realestate_property
+from . import realestate_visit

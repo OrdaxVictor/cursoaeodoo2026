@@ -8,7 +8,11 @@
     "depends": [
         "base",],
     "data": [
-        'views/real_estate_view.xml',
+        'security/realestate_security.xml',
+        'security/ir.model.access.csv',
+        'views/realestate_property_view.xml',
+        'views/realestate_visit_view.xml',
+        'views/realestate_menuitems.xml',
         ],
     "installable": True,
 }
