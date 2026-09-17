@@ -7,15 +7,11 @@
             <field name="arch" type="xml">
                 <form string="Visit">
                     <header>
-                        <field name="status" invisible="1"/>
-                        <button name="action_reserve"
-                                string="Reserve"
-                                type="object"
-                                class="oe_highlight"
-                                invisible="status == 'R'"/>
+                        <button name="action_reserve" string="Reserve" type="object" class="oe_highlight" invisible="status == 'R'"/>
                         <field name="status" widget="statusbar"/>
                     </header>
                     <sheet>
+                        <widget name="web_ribbon" title="Reserved" bg_color="text-bg-success" invisible="status != 'R'"/>
                         <group name="group_top">
                             <group name="group_left">
                                 <p>
