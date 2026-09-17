@@ -5,19 +5,19 @@
             <field name="name">view.realestate.property.form</field>
             <field name="model">realestate.property</field>
             <field name="arch" type="xml">
-                <form string="Propiedad">
+                <form string="Property">
                     <sheet>
                         <group name="group_top">
                             <group name="group_left">
                                 <p>
-                                    Datos principales
+                                    Main data
                                 </p><br />
                                 <field name="name"/>
                                 <field name="size"/>
                             </group>
                             <group name="group_right">
                                 <p>
-                                    Detalles
+                                    Details
                                 </p><br />
                                 <field name="desc"/>
                             </group>
@@ -33,7 +33,7 @@
             <field name="name">view.realestate.property.tree</field>
             <field name="model">realestate.property</field>
             <field name="arch" type="xml">
-                <list string="Propiedades">
+                <list string="Properties">
                     <field name="name"/>
                     <field name="size"/>
                     <field name="desc"/>
@@ -46,7 +46,7 @@
             <field name="name">view.realestate.property.search</field>
             <field name="model">realestate.property</field>
             <field name="arch" type="xml">
-                <search string="Filtrar propiedades">
+                <search string="Filter properties">
                     <field name="name"/>
                     <field name="size"/>
                 </search>
@@ -54,16 +54,16 @@
         </record>
 
         <record id="action_realestate_property_view" model="ir.actions.act_window">
-            <field name="name">Propiedades</field>
+            <field name="name">Properties</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">realestate.property</field>
             <field name="view_mode">list,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    Propiedades
+                    Properties
                 </p>
                 <p>
-                    Click 'Nuevo' para añadir nuevos elementos
+                    Click 'New' to add new elements
                 </p>
             </field>
         </record>

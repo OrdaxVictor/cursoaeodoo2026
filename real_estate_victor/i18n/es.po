@@ -18,12 +18,12 @@ msgstr ""
 #. module: real_estate_victor
 #: model_terms:ir.actions.act_window,help:real_estate_victor.action_realestate_property_view
 #: model_terms:ir.actions.act_window,help:real_estate_victor.action_realestate_visit_view
-msgid "Click 'Nuevo' para añadir nuevos elementos"
+msgid "Click 'New' to add new elements"
 msgstr "Click 'Nuevo' para añadir nuevos elementos"
 
 #. module: real_estate_victor
 #: model:ir.model.fields,field_description:real_estate_victor.field_realestate_visit__contact
-msgid "Contacto"
+msgid "Contact"
 msgstr "Contacto"
 
 #. module: real_estate_victor
@@ -41,18 +41,18 @@ msgstr "Creado el"
 #. module: real_estate_victor
 #: model_terms:ir.ui.view,arch_db:real_estate_victor.view_realestate_property_form
 #: model_terms:ir.ui.view,arch_db:real_estate_victor.view_realestate_visit_form
-msgid "Datos principales"
+msgid "Main data"
 msgstr "Datos principales"
 
 #. module: real_estate_victor
 #: model:ir.model.fields,field_description:real_estate_victor.field_realestate_property__desc
-msgid "Descripción"
+msgid "Description"
 msgstr "Descripción"
 
 #. module: real_estate_victor
 #: model_terms:ir.ui.view,arch_db:real_estate_victor.view_realestate_property_form
 #: model_terms:ir.ui.view,arch_db:real_estate_victor.view_realestate_visit_form
-msgid "Detalles"
+msgid "Details"
 msgstr "Detalles"
 
 #. module: real_estate_victor
@@ -63,22 +63,22 @@ msgstr "Nombre mostrado"
 
 #. module: real_estate_victor
 #: model:ir.model.fields,field_description:real_estate_victor.field_realestate_visit__status
-msgid "Estado"
+msgid "Status"
 msgstr "Estado"
 
 #. module: real_estate_victor
 #: model:ir.model.fields,field_description:real_estate_victor.field_realestate_visit__date
-msgid "Fchae"
+msgid "Date"
 msgstr "Fecha"
 
 #. module: real_estate_victor
 #: model_terms:ir.ui.view,arch_db:real_estate_victor.view_realestate_property_search
-msgid "Filtrar propiedades"
+msgid "Filter properties"
 msgstr "Filtrar propiedades"
 
 #. module: real_estate_victor
 #: model_terms:ir.ui.view,arch_db:real_estate_victor.view_realestate_visit_search
-msgid "Filtrar visitas"
+msgid "Filter visits"
 msgstr "Filtrar visitas"
 
 #. module: real_estate_victor
@@ -116,12 +116,12 @@ msgstr "Responsable"
 
 #. module: real_estate_victor
 #: model:ir.model.fields,field_description:real_estate_victor.field_realestate_property__size
-msgid "Metros cuadrados"
+msgid "Size"
 msgstr "Metros cuadrados"
 
 #. module: real_estate_victor
 #: model:ir.model.fields.selection,name:real_estate_victor.selection__realestate_visit__status__p
-msgid "Pendiente"
+msgid "Pending"
 msgstr "Pendiente"
 
 #. module: real_estate_victor
@@ -132,7 +132,7 @@ msgstr "Propiedad"
 #. module: real_estate_victor
 #: model:ir.model.fields,field_description:real_estate_victor.field_realestate_property__name
 #: model_terms:ir.ui.view,arch_db:real_estate_victor.view_realestate_property_form
-msgid "Propiedad"
+msgid "Property"
 msgstr "Propiedad"
 
 #. module: real_estate_victor
@@ -140,7 +140,7 @@ msgstr "Propiedad"
 #: model:ir.ui.menu,name:real_estate_victor.menu_realestate_property
 #: model_terms:ir.actions.act_window,help:real_estate_victor.action_realestate_property_view
 #: model_terms:ir.ui.view,arch_db:real_estate_victor.view_realestate_property_tree
-msgid "Propiedades"
+msgid "Properties"
 msgstr "Propiedades"
 
 #. module: real_estate_victor
@@ -171,7 +171,7 @@ msgstr "Visita"
 
 #. module: real_estate_victor
 #: model:ir.model.fields,field_description:real_estate_victor.field_realestate_property__user_id
-msgid "Responsable"
+msgid "Manager"
 msgstr "Responsable"
 
 #. module: real_estate_victor
@@ -182,12 +182,12 @@ msgstr "Usuario"
 #. module: real_estate_victor
 #: model:ir.model.fields,field_description:real_estate_victor.field_realestate_visit__name
 #: model_terms:ir.ui.view,arch_db:real_estate_victor.view_realestate_visit_form
-msgid "Visita"
+msgid "Visit"
 msgstr "Visita"
 
 #. module: real_estate_victor
 #: model:ir.model.fields.selection,name:real_estate_victor.selection__realestate_visit__status__v
-msgid "Visitado"
+msgid "Visited"
 msgstr "Visitado"
 
 #. module: real_estate_victor
@@ -195,5 +195,5 @@ msgstr "Visitado"
 #: model:ir.ui.menu,name:real_estate_victor.menu_realestate_visit
 #: model_terms:ir.actions.act_window,help:real_estate_victor.action_realestate_visit_view
 #: model_terms:ir.ui.view,arch_db:real_estate_victor.view_realestate_visit_tree
-msgid "Visitas"
+msgid "Visits"
 msgstr "Visitas"

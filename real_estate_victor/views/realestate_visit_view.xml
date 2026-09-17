@@ -5,12 +5,20 @@
             <field name="name">view.realestate.visit.form</field>
             <field name="model">realestate.visit</field>
             <field name="arch" type="xml">
-                <form string="Visita">
+                <form string="Visit">
+                    <header>
+                        <button name="action_reserve"
+                                string="Reserve"
+                                type="object"
+                                class="oe_highlight"
+                                invisible="status == 'R'"/>
+                        <field name="status" widget="statusbar"/>
+                    </header>
                     <sheet>
                         <group name="group_top">
                             <group name="group_left">
                                 <p>
-                                    Datos principales
+                                    Main data
                                 </p><br />
                                 <field name="name"/>
                                 <field name="property"/>
@@ -18,7 +26,7 @@
                             </group>
                             <group name="group_right">
                                 <p>
-                                    Detalles
+                                    Details
                                 </p><br />
                                 <field name="date"/>
                                 <field name="contact"/>
@@ -36,7 +44,7 @@
             <field name="name">view.realestate.visit.tree</field>
             <field name="model">realestate.visit</field>
             <field name="arch" type="xml">
-                <list string="Visitas">
+                <list string="Visits">
                     <field name="name"/>
                     <field name="property"/>
                     <field name="date"/>
@@ -50,7 +58,7 @@
             <field name="name">view.realestate.visit.search</field>
             <field name="model">realestate.visit</field>
             <field name="arch" type="xml">
-                <search string="Filtrar visitas">
+                <search string="Foñter visits">
                     <field name="name"/>
                     <field name="property"/>
                     <field name="contact"/>
@@ -60,16 +68,16 @@
         </record>
 
         <record id="action_realestate_visit_view" model="ir.actions.act_window">
-            <field name="name">Visitas</field>
+            <field name="name">Visits</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">realestate.visit</field>
             <field name="view_mode">list,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
-                    Visitas
+                    Visits
                 </p>
                 <p>
-                    Click 'Nuevo' para añadir nuevos elementos
+                    Click 'New' to add new elements
                 </p>
             </field>
         </record>
