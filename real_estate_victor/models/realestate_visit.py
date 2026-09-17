@@ -8,6 +8,6 @@ class RealEstateVisit(models.Model):
 
     name = fields.Char(string='Visita')
     date = fields.Datetime(string='Fchae')
-    property = fields.Many2one(comodel_name='real.estate')
+    property = fields.Many2one(comodel_name='realestate.property')
     contact = fields.Many2one(comodel_name='res.partner', string='Contacto')
     status = fields.Selection([('P', 'Pendiente'), ('V', 'Visitado')],string='Estado')
