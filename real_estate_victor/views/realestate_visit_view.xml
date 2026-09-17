@@ -7,6 +7,7 @@
             <field name="arch" type="xml">
                 <form string="Visit">
                     <header>
+                        <field name="status" invisible="1"/>
                         <button name="action_reserve"
                                 string="Reserve"
                                 type="object"
@@ -30,6 +31,7 @@
                                 </p><br />
                                 <field name="date"/>
                                 <field name="contact"/>
+                                <field name="status"/>
                             </group>
                         </group>
                         <hr />
