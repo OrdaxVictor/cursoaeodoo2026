@@ -12,8 +12,8 @@ class RealEstateContract(models.Model):
     partner_id = fields.Many2one(comodel_name="res.partner", string="Tenant")
     start_date = fields.Date(string='Start date')
     end_date = fields.Date(string='End date')
-    rent = fields.float(string='Rent')
-    bail = fields.float(string='Bail')
+    rent = fields.Float(string='Rent')
+    bail = fields.Float(string='Bail')
     status = fields.Selection([('D', 'Draft'), ('E', 'Ended'), ('C', 'Canceled'), ('O', 'Ongoing')], string='Status', default='D')
     
     def action_draft(self):
