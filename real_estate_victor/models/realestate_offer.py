@@ -6,7 +6,7 @@ class RealEstateOffer(models.Model):
     _name = 'realestate.offer'
     _description = 'RealEstateOffer'
 
-    property_id = fields.Many2one(comodel_name="realestate.propertys", string="Property")
+    property_id = fields.Many2one(comodel_name="realestate.property", string="Property")
     partner_id = fields.Many2one(comodel_name="res.partner", string="Buyer")
     offer = fields.Float(string='Offer')
     date =fields.Datetime(string="Offer date")
