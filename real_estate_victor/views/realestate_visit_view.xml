@@ -26,7 +26,7 @@
                                     Details
                                 </p><br />
                                 <field name="date"/>
-                                <field name="contact"/>
+                                <field name="partner_id"/>
                                 <field name="status"/>
                             </group>
                         </group>
@@ -45,7 +45,7 @@
                     <field name="name"/>
                     <field name="property"/>
                     <field name="date"/>
-                    <field name="contact"/>
+                    <field name="partner_id"/>
                     <field name="status"/>
                 </list>
             </field>
@@ -58,7 +58,7 @@
                 <search string="Foñter visits">
                     <field name="name"/>
                     <field name="property"/>
-                    <field name="contact"/>
+                    <field name="partner_id"/>
                     <field name="status"/>
                 </search>
             </field>
