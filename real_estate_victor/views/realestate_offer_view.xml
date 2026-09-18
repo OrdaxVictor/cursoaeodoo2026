@@ -7,7 +7,10 @@
             <field name="arch" type="xml">
                 <form string="Offer">
                     <header>
-                        <button name="action_accepted" string="Accepted" type="object" class="oe_highlight" invisible="status == 'A'"/>
+                        <button name="action_draft" string="Return to draft" type="object" class="oe_highlight" invisible="status == 'D'"/>
+                        <button name="action_sent" string="Send" type="object" class="oe_highlight" invisible="status == 'S'"/>
+                        <button name="action_accepted" string="Accept" type="object" class="oe_highlight" invisible="status == 'A'"/>
+                        <button name="action_refused" string="Refuse" type="object" class="oe_highlight" invisible="status == 'R'"/>
                         <field name="status" widget="statusbar"/>
                     </header>
                     <sheet>
