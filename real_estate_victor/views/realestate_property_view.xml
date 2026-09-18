@@ -14,6 +14,8 @@
                                 </p><br />
                                 <field name="name"/>
                                 <field name="size"/>
+                                <field name="category_id"/>
+                                <field name="status"/>
                             </group>
                             <group name="group_right">
                                 <p>
