@@ -51,6 +51,23 @@
             </field>
         </record>
 
+        <record id="view_realestate_visit_calendar" model="ir.ui.view">
+            <field name="name">view.realestate.visit.calendar</field>
+            <field name="model">realestate.visit</field>
+            <field name="arch" type="xml">
+                <calendar string="Visits"
+                        date_start="date"
+                        color="partner_id"
+                        mode="month"
+                        quick_create="False">
+                    <field name="name"/>
+                    <field name="property"/>
+                    <field name="partner_id"/>
+                    <field name="status"/>
+                </calendar>
+            </field>
+        </record>
+
         <record id="view_realestate_visit_search" model="ir.ui.view">
             <field name="name">view.realestate.visit.search</field>
             <field name="model">realestate.visit</field>
