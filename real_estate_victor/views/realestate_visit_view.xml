@@ -51,6 +51,20 @@
             </field>
         </record>
 
+        <record id="view_realestate_visit_kanban" model="ir.ui.view">
+            <field name="name">view.realestate.visit.kanban</field>
+            <field name="model">realestate.visit</field>
+            <field name="arch" type="xml">
+                <list string="Visits">
+                    <field name="name"/>
+                    <field name="property"/>
+                    <field name="date"/>
+                    <field name="partner_id"/>
+                    <field name="status"/>
+                </list>
+            </field>
+        </record>
+
         <record id="view_realestate_visit_calendar" model="ir.ui.view">
             <field name="name">view.realestate.visit.calendar</field>
             <field name="model">realestate.visit</field>
