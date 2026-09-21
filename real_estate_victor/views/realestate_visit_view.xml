@@ -57,12 +57,14 @@
             <field name="arch" type="xml">
                 <kanban class="o_rol_character_kanban">
                     <field name="name"/>
-                        <t t-name="kanban-box">
-                            <field name="property"/>
-                            <field name="date"/>
-                            <field name="partner_id"/>
-                            <field name="status"/>
-                        </t>
+                        <templates>
+                            <t t-name="kanban-box">
+                                <field name="property"/>
+                                <field name="date"/>
+                                <field name="partner_id"/>
+                                <field name="status"/>
+                            </t>
+                        </templates>
                 </kanban>
             </field>
         </record>
