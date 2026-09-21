@@ -41,7 +41,6 @@
             <field name="name">view.realestate.visit.tree</field>
             <field name="model">realestate.visit</field>
             <field name="arch" type="xml">
-            <field name="type">list</field>
                 <list string="Visits">
                     <field name="name"/>
                     <field name="property"/>
@@ -56,8 +55,7 @@
             <field name="name">view.realestate.visit.kanban</field>
             <field name="model">realestate.visit</field>
             <field name="arch" type="xml">
-            <field name="type">kanban</field>
-                <kanban class="o_realestate_visit_kanban">
+                <kanban>
                         <templates>
                             <t t-name="card">
                                 <field name="property"/>
