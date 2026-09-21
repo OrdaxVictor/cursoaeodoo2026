@@ -55,8 +55,7 @@
             <field name="name">view.realestate.visit.kanban</field>
             <field name="model">realestate.visit</field>
             <field name="arch" type="xml">
-            <field name="type">kanban</field>
-                <kanban class="o_rol_character_kanban">
+                <kanban class="o_realestate_visit_kanban">
                         <templates>
                             <t t-name="card">
                                 <field name="property"/>
@@ -103,7 +102,7 @@
             <field name="name">Visits</field>
             <field name="type">ir.actions.act_window</field>
             <field name="res_model">realestate.visit</field>
-            <field name="view_mode">list,form,kanban,calendar,pivot</field>
+            <field name="view_mode">form,list,kanban,calendar,pivot</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     Visits
