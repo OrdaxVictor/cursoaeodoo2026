@@ -55,10 +55,10 @@
             <field name="name">view.realestate.visit.kanban</field>
             <field name="model">realestate.visit</field>
             <field name="arch" type="xml">
+            <field name="type">kanban</field>
                 <kanban class="o_rol_character_kanban">
-                    <field name="name"/>
                         <templates>
-                            <t t-name="kanban-box">
+                            <t t-name="card">
                                 <field name="property"/>
                                 <field name="date"/>
                                 <field name="partner_id"/>
