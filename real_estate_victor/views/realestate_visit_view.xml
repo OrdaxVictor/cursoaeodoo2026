@@ -114,7 +114,7 @@
 
     <record id="view_realestate_visit_graph" model="ir.ui.view">
         <field name="name">realestate.visit.graph</field>
-        <field name="model">realestate.property</field>
+        <field name="model">realestate.visit</field>
         <field name="arch" type="xml">
             <graph>
                 <field name="partner_id" type="row"/>

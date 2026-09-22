@@ -10,7 +10,6 @@ class RealEstateProperty(models.Model):
     desc = fields.Char(string='Description')
     size = fields.Float(string='Size')
     user_id = fields.Many2one(comodel_name="res.users", string="Manager")
-    partner_id = fields.Many2one(comodel_name="res.partner", string="Partner")
     category_id = fields.Many2one(comodel_name="realestate.category", string="Category")
 
     price = fields.Float(string="Price")
