@@ -70,7 +70,7 @@
         <field name="name">view.realestate.visit.kanban</field>
         <field name="model">realestate.visit</field>
         <field name="arch" type="xml">
-            <kanban highlight_color="color" default_group_by="stage_id" on_create="quick_create" class="o_kanban_small_column">
+            <kanban class="o_kanban_small_column">
                 <field name="name"/>
                 <templates>
                     <t t-name="card">
