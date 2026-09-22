@@ -49,6 +49,7 @@
                                 Details
                             </p><br />
                             <field name="user_id" widget="many2one_avatar_user"/>
+                            <field name="price"/>
                         </group>
                         <notebook>
                             <page string="Information">
