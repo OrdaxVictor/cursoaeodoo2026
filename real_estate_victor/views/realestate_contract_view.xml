@@ -32,6 +32,8 @@
                             </p><br />
                             <field name="start_date"/>
                             <field name="end_date"/>
+                            <field name="duration_days"/>
+                            <field name="days_to_end"/>
                             <field name="rent"/>
                             <field name="bail"/>
                             <field name="status"/>
