@@ -13,7 +13,6 @@
 - `create`: en una propiedad, botón que cree una visita para esa propiedad (fecha y responsable por defecto).
 - `search` + `write`: en una propiedad, botón que busque la mejor oferta enviada y la acepte (`order="amount desc"`, `limit=1` + `action_accept`).
 - `unlink`: en una propiedad, botón que borre las ofertas rechazadas.
-- `browse`: los Many2one ya son recordsets; `env.ref('base.user_admin')` como ejemplo de registro por XML ID.
 
 # Deberes
 
