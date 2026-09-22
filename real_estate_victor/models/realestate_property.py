@@ -29,3 +29,11 @@ class RealEstateProperty(models.Model):
     
     def _read_group_stage_ids(self, stages, domain):
         return self.env['realestate.property.stage'].search([], order='sequence')
+
+    def action_create_offer(self):
+        vals = {
+            'property_id': self.id,
+            'date': fields.Datetime.now(),
+            'offer': self.price
+        }
+        self.env['realestate.offer'].create(vals)

@@ -42,6 +42,8 @@
                             </p><br />
                             <field name="date"/>
                             <field name="partner_id"/>
+                            <field name="phone"/>
+                            <field name="email"/>
                             <field name="status"/>
                         </group>
                     </group>

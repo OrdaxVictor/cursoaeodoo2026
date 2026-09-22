@@ -24,6 +24,7 @@
             <form string="Property">
                  <header>
                     <button name="action_reserve" string="Reserve" invisible="not availability" type="object" class="btn-primary"/>
+                    <button name="action_create_offer" string="Create offer" type="object" class="btn-primary"/>
                     <field name="stage_id" widget="statusbar"/>
                 </header>
                 <sheet>

@@ -15,7 +15,10 @@ class RealEstateContract(models.Model):
     rent = fields.Float(string='Rent')
     bail = fields.Float(string='Bail')
     status = fields.Selection([('D', 'Draft'), ('E', 'Ended'), ('C', 'Canceled'), ('O', 'Ongoing')], string='Status', default='D')
-    
+    with_bail = fields.Boolean(string='Woth bail',compute='_compute_with_bail', store=True)
+    ongoing_days = fields.Integer(string="Ongoing days", compute='_compute_ongoing_days')
+
+
     def action_draft(self):
         self.write({'status': 'D'})
         return True
@@ -31,3 +34,18 @@ class RealEstateContract(models.Model):
     def action_ongoing(self):
         self.write({'status': 'O'})
         return True
+
+    @api.depends('bail')
+    def _compute_with_bail(self):
+        for record in self:
+            if record.bail:
+                record.with_bail = True
+            else:
+                record.with_bail = False
+
+    def _compute_ongoing_days(self):
+        for record in self:
+            if record.start_date:
+                record.ongoing_days = (fields.Date.today() - record.start_date).days
+            else:
+                record.ongoing_days = 0
