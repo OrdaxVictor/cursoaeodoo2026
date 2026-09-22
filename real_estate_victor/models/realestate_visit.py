@@ -8,12 +8,12 @@ class RealEstateVisit(models.Model):
 
     name = fields.Char(string='Visit')
     date = fields.Datetime(string='Date')
-    property = fields.Many2one(comodel_name='realestate.property', string="Property")
+    property_id = fields.Many2one(comodel_name='realestate.property', string="Property")
     partner_id = fields.Many2one(comodel_name='res.partner', string='Contact')
     status = fields.Selection([('P', 'Pending'), ('V', 'Visited'), ('R', 'Reserved')], string='Status', default='P')
 
     def action_reserve(self):
-        self.write({'status': 'R'})
+        self.write({'availability': False})
         return True
 
 

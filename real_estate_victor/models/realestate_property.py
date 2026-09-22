@@ -11,4 +11,21 @@ class RealEstateProperty(models.Model):
     size = fields.Float(string='Size')
     user_id = fields.Many2one(comodel_name="res.users", string="Manager")
     category_id = fields.Many2one(comodel_name="realestate.category", string="Category")
-    status = fields.Selection([('D', 'Draft'), ('N', 'Not available'), ('R', 'Reserved')], string='Status', default='D')
+
+    price = fields.Float(string="Price")
+    reference = fields.Char(string="Reference")
+    availability = fields.Boolean(string="Availability", default=True)
+
+    stage_id = fields.Many2one(
+        comodel_name="realestate.property.stage",
+        string="Stage",
+        group_expand="_read_group_stage_ids"
+    )
+
+    color = fields.Integer(string="Color")
+
+    def action_reserve(self):
+        self.availability = False
+    
+    def _read_group_stage_ids(self, stages, domain):
+        return self.env['realestate.property.stage'].search([], order='sequence')
