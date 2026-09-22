@@ -34,6 +34,7 @@
                             </p><br />
                             <field name="name"/>
                             <field name="property_id"/>
+                            <field name="user_id"/>
                             
                         </group>
                         <group name="group_right">
