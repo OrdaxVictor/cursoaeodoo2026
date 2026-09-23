@@ -1,7 +1,7 @@
 from odoo import models, fields
 
 class RealestatePropertyIncidence(models.Model):
-    _name = "realestate.property.incedence"
+    _name = "realestate.property.incidence"
     _description = "Property Incidence"
 
     name = fields.Char(string="Name")
