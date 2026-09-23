@@ -7,7 +7,7 @@ class RealestatePropertyImage(models.Model):
     def _default_name(self):
         return "Imagen "
 
-    name = fields.Char(string="Name", default=_default_name())
+    name = fields.Char(string="Name", default=_default_name)
     sequence = fields.Integer(string="Sequence", default=10)
     property_id = fields.Many2one(
         comodel_name="realestate.property",
