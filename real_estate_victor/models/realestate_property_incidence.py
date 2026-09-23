@@ -5,7 +5,7 @@ class RealestatePropertyIncidence(models.Model):
     _description = "Property Incidence"
 
     def _default_name(self):
-        return "Imagen "
+        return "Incidencia "
 
     name = fields.Char(string="Name", default=_default_name())
     sequence = fields.Integer(string="Sequence", default=10)
