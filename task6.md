@@ -28,7 +28,7 @@ En la vista simple de visitas, el campo usuario solo debe mostrar usuarios inter
 
 ## Opciones m2o
 
-En la incidencia, la propiedad no debe dejar crear ni abrir propiedades.
+En la incidencia, no se debe de permitir entrar en el usuario ni crear nuevos desde aquí.
 
 ## Modelo nuevo de incidencia en una propiedad
 
