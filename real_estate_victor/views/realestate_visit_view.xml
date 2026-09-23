@@ -69,6 +69,19 @@
         </field>
     </record>
 
+    <record id="view_realestate_visit_simple_list" model="ir.ui.view">
+        <field name="name">realestate.visit.simple.list</field>
+        <field name="model">realestate.visit</field>
+        <field name="priority" eval="99" />
+        <field name="arch" type="xml">
+            <list editable="bottom">
+                <field name="partner_id" options="{'no_quick_create': True}" optional="show"/>
+                <field name="user_id" options="{'no_create': True,'no_open':True}" optional="show"/>
+                <field name="state" decoration-info="state == 'draft'" decoration-success="state == 'done'" decoration-danger="state == 'canceled'" widget="badge" optional="show"/>
+            </list>
+        </field>
+    </record>
+
     <record id="view_realestate_visit_kanban" model="ir.ui.view">
         <field name="name">view.realestate.visit.kanban</field>
         <field name="model">realestate.visit</field>

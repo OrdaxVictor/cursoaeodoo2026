@@ -68,10 +68,15 @@
                                 </field>
                             </page>
                             <page string="Visits">
-                                <field name="visit_ids" context="{'list_view_ref':'real_estate_nacho.realestate_visit_list_simple_view','default_user_id': user_id}"/>
+                                <field name="visit_ids" context="{'list_view_ref':'real_estate_victor.view_realestate_visit_simple_list','default_user_id': user_id}"/>
                             </page>
                             <page string="Incidences">
-                                <field name="incidence_ids" context="{'list_view_ref':'real_estate_nacho.realestate_property_incidence_list_simple_view','default_user_id': user_id}"/>
+                                <field name="incidence_ids" context="{'default_name': 'Incidencia'}">
+                                    <list editable="bottom">
+                                        <field name="sequence" widget="handle"/>
+                                        <field name="name"/>
+                                    </list>
+                                </field>
                             </page>
                         </notebook>
                     </group>
