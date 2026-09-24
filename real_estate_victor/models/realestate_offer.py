@@ -29,7 +29,7 @@ class RealEstateOffer(models.Model):
 
     def action_accepted(self):
         self.write({'status': 'A'})
-        self.write({'property_id.status': 'R'})
+        self.write({'property_id.availability': 'False'})
         return True
 
     def action_refused(self):
