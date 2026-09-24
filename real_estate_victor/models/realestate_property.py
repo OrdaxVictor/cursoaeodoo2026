@@ -59,7 +59,7 @@ class RealEstateProperty(models.Model):
         for record in self:
             now = fields.Datetime.now()
             dates = record.visit_ids.filtered(
-                lambda v: v.date and v.date > now and v.status != 'C'
+                lambda v: v.date and v.date > now and v.status == 'S'
             ).mapped('date')
             record.next_visit_date = min(dates) if dates else False
 
