@@ -54,12 +54,12 @@ class RealEstateProperty(models.Model):
     color = fields.Integer(string="Color")
 
 
-    @api.depends('visit_ids.date')
+    @api.depends('visit_ids.date', 'visit_ids.status')
     def _compute_next_visit_date(self):
         for record in self:
             now = fields.Datetime.now()
             dates = record.visit_ids.filtered(
-                lambda v: v.date and v.date > now
+                lambda v: v.date and v.date > now and v.status != 'C'
             ).mapped('date')
             record.next_visit_date = min(dates) if dates else False
 
