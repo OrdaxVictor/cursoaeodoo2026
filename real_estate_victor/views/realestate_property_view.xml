@@ -28,6 +28,7 @@
                     <button name="action_accept_best_offer" class="btn-secondary" string="Accept Best Offer" type="object" />
                     <button name="action_delete_refused_offers" class="btn-danger" string="Delete Refused Offers" type="object" />
                     <button name="action_create_offer" string="Create offer" type="object" class="btn-primary"/>
+                    <button name="action_cancel_visits" string="Cancel Visits" type="object" class="btn-danger"/>
                     <field name="stage_id" widget="statusbar"/>
                 </header>
                 <sheet>

@@ -35,3 +35,20 @@ class RealEstateOffer(models.Model):
     def action_refused(self):
         self.write({'status': 'R'})
         return True
+
+    def action_create_contract(self):
+        vals = {
+            'property_id': self.property_id.id,
+            'partner_id': self.partner_id.id,
+            'type': 'S',
+            'start_date': fields.Date.today(),
+            'status': 'D'
+        }
+        contract = self.env['realestate.contract'].create(vals)
+        return {
+            'type': 'ir.actions.act_window',
+            'res_model': 'realestate.contract',
+            'res_id': contract.id,
+            'view_mode': 'form',
+            'target': 'current',
+        }

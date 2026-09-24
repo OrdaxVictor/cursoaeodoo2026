@@ -89,6 +89,13 @@ class RealEstateProperty(models.Model):
         refused_offers.unlink()
 
 
+    def action_cancel_visits(self):
+        visits = self.env['realestate.visit'].search([
+            ('property_id', '=', self.id),
+            ('status', 'in', ['P', 'S'])
+        ])
+        visits.write({'status': 'C'})
+
     def action_create_offer(self):
         vals = {
             'property_id': self.id,

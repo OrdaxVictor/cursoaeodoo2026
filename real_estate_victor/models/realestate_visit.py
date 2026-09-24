@@ -13,7 +13,7 @@ class RealEstateVisit(models.Model):
     user_id = fields.Many2one(comodel_name='res.users', string='Manager')
     phone = fields.Char(string="Phone", related="partner_id.phone", readonly=False, store=True)
     email = fields.Char(string="Email", related="partner_id.email", readonly=False, store=True)
-    status = fields.Selection([('P', 'Pending'),('S','Scheduled'), ('V', 'Visited'), ('R', 'Reserved')], string='Status', default='P')
+    status = fields.Selection([('P', 'Pending'),('S','Scheduled'), ('V', 'Visited'), ('R', 'Reserved'), ('C', 'Cancelled')], string='Status', default='P')
 
 
     def action_reserve(self):

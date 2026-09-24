@@ -11,6 +11,7 @@
                     <button name="action_sent" string="Send" type="object" class="oe_highlight" invisible="status == 'S'"/>
                     <button name="action_accepted" string="Accept" type="object" class="oe_highlight" invisible="status == 'A'"/>
                     <button name="action_refused" string="Refuse" type="object" class="oe_highlight" invisible="status == 'R'"/>
+                    <button name="action_create_contract" string="Create Contract" type="object" class="btn-secondary" invisible="status != 'A'"/>
                     <field name="status" widget="statusbar"/>
                 </header>
                 <sheet>
