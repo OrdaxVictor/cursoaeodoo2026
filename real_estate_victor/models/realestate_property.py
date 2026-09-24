@@ -92,7 +92,7 @@ class RealEstateProperty(models.Model):
     def action_cancel_visits(self):
         visits = self.env['realestate.visit'].search([
             ('property_id', '=', self.id),
-            ('status', 'in', ['P', 'S'])
+            ('status', 'in', ['P'])
         ])
         visits.write({'status': 'C'})
 
