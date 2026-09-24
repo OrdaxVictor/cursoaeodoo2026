@@ -1,12 +1,3 @@
-# Tutoría: repaso y deberes
-
-Repaso de lo visto esta semana: kanban, pivot y graph, campos calculados (con y
-sin `depends`), métodos ORM, opciones m2o, vistas embebidas y relaciones, filtros
-de búsqueda y dominios.
-
-Los deberes se hacen sobre las ofertas y los contratos, que todavía casi no
-tienen vistas, reutilizando todo lo anterior con casos nuevos.
-
 # Deberes
 
 ## Propiedad: ofertas relacionadas
@@ -16,26 +7,14 @@ inverso de `property_id`).
 
 ## Vista embebida de ofertas
 
-En la propiedad, pestaña "Ofertas" con las ofertas como listado editable inline
-(`<list editable="bottom">`): comprador, importe, fecha y estado
-(`widget="badge"` con `decoration-*` por estado).
+En la propiedad, pestaña "Ofertas" con las ofertas como listado editable inline. Con los campos que queráis.
 
-## Vista relacionada
-
-Crear una vista de formulario reducida y de solo lectura de la propiedad
-(referencia, categoría, precio, disponibilidad y responsable) y abrirla desde el
-campo propiedad del contrato con `form_view_ref` en el contexto del campo.
-
-## Campo calculado con depends
+## Campo calculado 
 
 En la propiedad, `next_visit_date` (Datetime): la fecha de la próxima visita
-planificada (la más cercana de sus `visit_ids` en estado planificado),
-almacenada (`store=True`). Mostrarla en la lista de propiedades.
+planificada (la más cercana de sus `visit_ids` en estado planificado). 
+Mostrarla en alguna de sus vistas.
 
-## Campo calculado sin depends
-
-En la visita, `days_to_visit` (Integer): los días que quedan hasta la fecha de la
-visita. Sin `@api.depends`, por lo que no se puede almacenar. Si no hay fecha, 0.
 
 ## Campo relacionado
 
@@ -64,7 +43,7 @@ de la action de ofertas.
 ## Opciones m2o
 
 - En la oferta, la propiedad no debe dejar crear ni abrir propiedades.
-- En el contrato, el inquilino solo se elige entre los contactos existentes (sin
+- En el contrato, el inquilino solo se elige entre los contactos existentes (sin poder
   crear contactos desde ahí).
 
 ## Dominio
@@ -78,4 +57,3 @@ En el contrato, la propiedad solo debe poder ser una propiedad reservada
   propiedad, ese comprador, tipo venta y fecha de inicio hoy.
 - `search` + `write`: en la propiedad, botón que cancele todas sus visitas en
   borrador o planificadas.
-- `unlink`: en la propiedad, botón que borre las imágenes que no tengan foto.
