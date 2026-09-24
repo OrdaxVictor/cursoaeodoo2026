@@ -78,6 +78,8 @@
                 <field name="partner_id" options="{'no_quick_create': True}" optional="show"/>
                 <field name="user_id" options="{'no_create': True,'no_open':True}" optional="show"/>
                 <field name="status" decoration-info="status == 'P'" decoration-success="status == 'V'" decoration-warning="status == 'R'" widget="badge" optional="show"/>
+                <field name="date" optional="show"/>
+
             </list>
         </field>
     </record>
