@@ -59,7 +59,7 @@ class RealEstateProperty(models.Model):
     def _compute_next_visit_date(self):
         for record in self:
             dates = record.visit_ids
-            record.next_visit_date = min(dates).name
+            record.next_visit_date = min(dates).date
 
     def action_reserve(self):
         self.availability = False
