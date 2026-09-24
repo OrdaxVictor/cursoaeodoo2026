@@ -36,8 +36,7 @@ class RealEstateProperty(models.Model):
 
     next_visit_date = fields.Datetime(
             string="Next visit date",
-            compute="_compute_next_visit_date", 
-            store=True
+            compute="_compute_next_visit_date"
         )
 
     incidence_ids = fields.One2many(
@@ -58,8 +57,11 @@ class RealEstateProperty(models.Model):
     @api.depends('visit_ids.date')
     def _compute_next_visit_date(self):
         for record in self:
-            dates = record.visit_ids
-            record.next_visit_date = min(dates).date
+            now = fields.Datetime.now()
+            dates = record.visit_ids.filtered(
+                lambda v: v.date and v.date > now
+            ).mapped('date')
+            record.next_visit_date = min(dates) if dates else False
 
     def action_reserve(self):
         self.availability = False
