@@ -55,7 +55,7 @@ class RealEstateProperty(models.Model):
     color = fields.Integer(string="Color")
 
 
-    @api.depends('visit_ids.date', 'visit_ids.status')
+    @api.depends('visit_ids.date')
     def _compute_next_visit_date(self):
         for record in self:
             dates = record.visit_ids
