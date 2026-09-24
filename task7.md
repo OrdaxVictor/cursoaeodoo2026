@@ -34,11 +34,8 @@ de la action de ofertas.
 
 ## Filtros de búsqueda (search) de ofertas
 
-- Búsqueda por escritura en el comprador: que busque por nombre del comprador y
-  por nombre de la propiedad, con `filter_domain`:
-  `['|', ('partner_id.name', 'ilike', self), ('property_id.name', 'ilike', self)]`
 - Filtros: Enviadas, Aceptadas y Rechazadas (por estado).
-- Agrupaciones: por estado, por propiedad y por comprador.
+- Agrupaciones: por propiedad.
 
 ## Opciones m2o
 
