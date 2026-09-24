@@ -58,8 +58,8 @@ class RealEstateProperty(models.Model):
     @api.depends('visit_ids.date')
     def _compute_next_visit_date(self):
         for record in self:
-            dates = record.visit_ids
-            record.next_visit_date = min(dates).date
+            dates = record.visit_ids.date
+            record.next_visit_date = min(dates)
 
     def action_reserve(self):
         self.availability = False
