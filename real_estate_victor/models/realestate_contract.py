@@ -8,7 +8,11 @@ class RealEstateContract(models.Model):
 
     name = fields.Char(string='Contract')
     type = fields.Selection([('R', 'Rent'), ('S', 'Sale')], string='Type')
-    property_id = fields.Many2one(comodel_name="realestate.property", string="Property")
+    property_id = fields.Many2one(
+        comodel_name="realestate.property",
+        string="Property",
+        domain="[('availability', '=', False)]"
+    )
     partner_id = fields.Many2one(comodel_name="res.partner", string="Tenant")
     start_date = fields.Date(string='Start date')
     end_date = fields.Date(string='End date')
