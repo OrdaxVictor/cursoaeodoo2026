@@ -20,5 +20,5 @@
 * Restricción SQL en el nombre del contrato, que sea único.
 * Un onchange en el contrato: al elegir la propiedad, que el alquiler se rellene con el precio de la propiedad.
 * Hacer un smartbutton para que en la propiedad aparezcan las incidencias asociadas.
-* Cuando se cree una visita, que la fecha por defecto sea la de ahora (y en la oferta también).
+* Cuando se cree una visita, que la fecha por defecto sea la de ahora.
 * Cron que busque las visitas planificadas y las ponga en done si su fecha ya ha pasado.
