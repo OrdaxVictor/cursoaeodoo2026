@@ -8,6 +8,7 @@
     "depends": [
         "base",],
     "data": [
+        'data/ir_cron.xml',
         'security/realestate_security.xml',
         'security/ir.model.access.csv',
         'views/realestate_property_view.xml',

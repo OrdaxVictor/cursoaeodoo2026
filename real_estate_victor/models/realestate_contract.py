@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields, api, _
+from odoo.exceptions import ValidationError
 
 class RealEstateContract(models.Model):
     _name = 'realestate.contract'
@@ -14,7 +15,7 @@ class RealEstateContract(models.Model):
         domain="[('availability', '=', False)]"
     )
     partner_id = fields.Many2one(comodel_name="res.partner", string="Tenant")
-    start_date = fields.Date(string='Start date')
+    start_date = fields.Date(string="Start Date", default=fields.Date.today)
     end_date = fields.Date(string='End date')
     rent = fields.Float(string='Rent')
     bail = fields.Float(string='Bail')
@@ -26,6 +27,11 @@ class RealEstateContract(models.Model):
 
     with_bail = fields.Boolean(string='Woth bail',compute='_compute_with_bail', store=True)
     ongoing_days = fields.Integer(string="Ongoing days", compute='_compute_ongoing_days')
+
+    _name_uniq = models.Constraint(
+        "unique(name)",
+        "The contract name must be unique."
+    )
 
 
     def action_draft(self):
@@ -39,6 +45,13 @@ class RealEstateContract(models.Model):
     def action_canceled(self):
         self.write({'status': 'C'})
         return True
+
+    def _cron_finish_contracts(self):
+        contracts = self.env['realestate.contract'].search(
+            [('end_date', '<', fields.Date.today()),
+             ('status', '=', 'O')])
+        contracts.write({'status': 'E'})
+
 
     def action_ongoing(self):
         self.write({'status': 'O'})
@@ -58,6 +71,17 @@ class RealEstateContract(models.Model):
                 record.ongoing_days = (fields.Date.today() - record.start_date).days
             else:
                 record.ongoing_days = 0
+
+    @api.onchange('property_id')
+    def _onchange_property_id(self):
+        if self.property_id:
+            self.rent = self.property_id.price
+
+    @api.constrains('start_date', 'end_date')
+    def _check_dates(self):
+        for record in self:
+            if record.start_date and record.end_date and record.end_date < record.start_date:
+                raise ValidationError(_("The end date cannot be earlier than the start date."))
 
     @api.depends('start_date', 'end_date')
     def _compute_duration_days(self):

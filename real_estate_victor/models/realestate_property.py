@@ -9,7 +9,7 @@ class RealEstateProperty(models.Model):
     name = fields.Char(string='Property')
     desc = fields.Char(string='Description')
     size = fields.Float(string='Size')
-    user_id = fields.Many2one(comodel_name="res.users", string="Manager")
+    user_id = fields.Many2one(comodel_name="res.users", string="Manager", default=lambda self: self.env.user.id)
     category_id = fields.Many2one(comodel_name="realestate.category", string="Category")
 
     price = fields.Float(string="Price")
@@ -53,6 +53,25 @@ class RealEstateProperty(models.Model):
 
     color = fields.Integer(string="Color")
 
+    visit_count = fields.Integer(string="Visit Count", compute="_compute_visit_count")
+
+    incidence_count = fields.Integer(string="Incidence Count", compute="_compute_incidence_count")
+
+    _reference_uniq = models.Constraint(
+        "unique(reference)",
+        "The property reference must be unique."
+    )
+
+    def _compute_visit_count(self):
+        for record in self:
+            # visit_ids = len(self.env['realestate.visit'].search([('property_id', '=', record.id)]))
+            # visit_ids = self.env['realestate.visit'].search_count([('property_id', '=', record.id)])
+            record.visit_count = len(record.visit_ids)
+
+    def _compute_incidence_count(self):
+        for record in self:
+            record.incidence_count = len(record.incidence_ids)
+
 
     @api.depends('visit_ids.date', 'visit_ids.status')
     def _compute_next_visit_date(self):
@@ -72,6 +91,7 @@ class RealEstateProperty(models.Model):
 
 
     def action_create_visit(self):
+        import pdb;pdb.set_trace()
         vals = {
             'property_id': self.id,
             'date': fields.Datetime.now(),
@@ -97,6 +117,28 @@ class RealEstateProperty(models.Model):
             ('status', 'in', ['P'])
         ])
         visits.write({'status': 'C'})
+
+    def action_open_visits(self):
+        action = {
+            'type': 'ir.actions.act_window',
+            'name': 'Visits',
+            'res_model': 'realestate.visit',
+            'view_mode': 'kanban,list,form',
+            'domain': [('property_id', '=', self.id)],
+            'context': {'default_property_id': self.id}
+        }
+        return action
+
+    def action_open_incidences(self):
+        action = {
+            'type': 'ir.actions.act_window',
+            'name': 'Incidences',
+            'res_model': 'realestate.property.incidence',
+            'view_mode': 'list,form',
+            'domain': [('property_id', '=', self.id)],
+            'context': {'default_property_id': self.id}
+        }
+        return action
 
     def action_create_offer(self):
         vals = {
