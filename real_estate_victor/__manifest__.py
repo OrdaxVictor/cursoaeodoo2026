@@ -16,6 +16,7 @@
         'views/realestate_category_view.xml',
         'views/realestate_offer_view.xml',
         'views/realestate_contract_view.xml',
+        'wizard/realestate_property_change_stage_views.xml',
         'views/realestate_menuitems.xml',
         ],
     "installable": True,
