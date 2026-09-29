@@ -5,7 +5,6 @@
 # Copy
 * Al duplicar una propiedad, la referencia no se debe copiar (copy=False): hoy duplicar falla por el unique de reference.
 * Al duplicar un contrato, el nombre no se debe copiar (copy=False): mismo error con unique(name).
-* Al duplicar una propiedad, no se copian sus visitas, ofertas ni incidencias (copy=False en los one2many).
 
 # Campos avanzados
 * Poder archivar propiedades: añadir active a la propiedad.
