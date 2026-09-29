@@ -20,4 +20,3 @@
 # Deberes
 * Asistente que cree visitas en lote desde la propiedad entre dos fechas (widget daterange), en estado planificado y con el responsable de la propiedad.
 * Poder archivar categorías (active en realestate.category).
-* Reexportar el es.po con las traducciones nuevas.
