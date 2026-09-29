@@ -8,7 +8,6 @@
 
 # Campos avanzados
 * Poder archivar propiedades: añadir active a la propiedad.
-* Etiquetas: modelo realestate.property.tag (nombre y color) y campo tag_ids (Many2many) en la propiedad con widget="many2many_tags".
 * Compañía: añadir company_id a la propiedad (compañía del usuario por defecto) y un campo nuevo company_dependent de notas internas (internal_note).
 
 # Monetary
