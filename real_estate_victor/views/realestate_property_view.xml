@@ -28,7 +28,7 @@
                     <button name="action_accept_best_offer" class="btn-secondary" string="Accept Best Offer" type="object" />
                     <button name="action_delete_refused_offers" groups="real_estate_victor.group_real_estate_manager" class="btn-danger" string="Delete Refused Offers" type="object" />
                     <button name="action_create_offer" string="Create offer" type="object" class="btn-primary"/>
-                    <button name="action_cancel_visits" groups="real_estate_nacho.group_real_estate_manager" class="btn-warning" string="Cancel Pending Visits" type="object" />
+                    <button name="action_cancel_visits" groups="real_estate_victor.group_real_estate_manager" class="btn-warning" string="Cancel Pending Visits" type="object" />
                     <field name="stage_id" widget="statusbar"/>
                 </header>
                 <sheet>
