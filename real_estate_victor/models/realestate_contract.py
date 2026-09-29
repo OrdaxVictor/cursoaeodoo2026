@@ -7,7 +7,7 @@ class RealEstateContract(models.Model):
     _name = 'realestate.contract'
     _description = 'RealEstateContract'
 
-    name = fields.Char(string='Contract')
+    name = fields.Char(string='Contract', copy=False)
     type = fields.Selection([('R', 'Rent'), ('S', 'Sale')], string='Type')
     property_id = fields.Many2one(
         comodel_name="realestate.property",

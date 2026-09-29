@@ -6,15 +6,22 @@ class RealEstateProperty(models.Model):
     _name = 'realestate.property'
     _description = 'RealEstateProperty'
 
+    active = fields.Boolean(string="Active", default=True)
     name = fields.Char(string='Property')
     desc = fields.Char(string='Description')
     size = fields.Float(string='Size')
     user_id = fields.Many2one(comodel_name="res.users", string="Manager", default=lambda self: self.env.user.id)
     category_id = fields.Many2one(comodel_name="realestate.category", string="Category")
 
-    price = fields.Float(string="Price")
-    reference = fields.Char(string="Reference")
+    price = fields.Monetary(string="Price", currency_field='currency_id')
+    reference = fields.Char(string="Reference", copy=False)
     availability = fields.Boolean(string="Availability", default=True)
+
+    currency_id = fields.Many2one(
+        comodel_name="res.currency",
+        string="Currency",
+        default=lambda self: self.env.company.currency_id.id
+    )
 
     stage_id = fields.Many2one(
         comodel_name="realestate.property.stage",
@@ -34,9 +41,18 @@ class RealEstateProperty(models.Model):
         string="Visits"
     )
 
+    internal_note = fields.Text(string="Internal Note", company_dependent=True)
+    company_id = fields.Many2one(
+        comodel_name="res.company",
+        string="Company",
+        default=lambda self: self.env.company.id
+    )
+
     next_visit_date = fields.Datetime(
             string="Next visit date",
-            compute="_compute_next_visit_date"
+            compute="_compute_next_visit_date",
+            inverse="_inverse_next_visit_date",
+            store=True
         )
 
     incidence_ids = fields.One2many(
@@ -61,6 +77,13 @@ class RealEstateProperty(models.Model):
         "unique(reference)",
         "The property reference must be unique."
     )
+
+    def _inverse_next_visit_date(self):
+        for record in self:
+            if record.next_visit_date:
+                scheduled_visits = record.visit_ids.filtered(lambda visit: visit.state == 'scheduled')
+                if scheduled_visits:
+                    scheduled_visits[0].date = record.next_visit_date
 
     def _compute_visit_count(self):
         for record in self:
