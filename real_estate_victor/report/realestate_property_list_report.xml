@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+<record id="action_report_realestate_property" model="ir.actions.report">
+    <field name="name">Property list</field>
+    <field name="model">realestate.property</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">real_estate_victor.report_realestate_property_list</field>
+    <field name="report_file">real_estate_victor.report_realestate_property_list</field>
+    <field name="print_report_name">object.reference</field>
+    <field name="binding_model_id" ref="model_realestate_property"/>
+    <field name="binding_type">report</field>
+</record>
+
+<template id="report_realestate_property_list">
+    <t t-call="web.html_container">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <h2>Property list: <t t-esc="o.name"/></h2>
+                    <table class="table table-sm o_main_table">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Reference</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <t t-foreach="docs" t-as="o">
+                                <tr>
+                                    <td t-field="o.name"/>
+                                    <td t-field="o.reference"/>
+                                    <td t-field="o.price"/>
+                                    <td t-field="o.status"/>
+                                </tr>
+                            </t>
+                        </tbody>
+
+                    </table>
+             </div>
+
+        </t>
+    </t>
+</template>
+</odoo>

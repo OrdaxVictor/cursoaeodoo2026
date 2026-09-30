@@ -6,7 +6,8 @@
     "author": "Víctor León",
     "license": "AGPL-3",
     "depends": [
-        "base",],
+        "base",
+        "web",],
     "data": [
         'data/ir_cron.xml',
         'security/realestate_security.xml',
@@ -19,6 +20,9 @@
         'wizard/realestate_property_change_stage_views.xml',
         'wizard/realestate_visit_lot_create_views.xml',
         'views/realestate_menuitems.xml',
+        'report/realestate_property_report.xml',
+        'report/realestate_property_list_report.xml',
+        'report/realestate_contract_report.xml',
         ],
     "installable": True,
 }

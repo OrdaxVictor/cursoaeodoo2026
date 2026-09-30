@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+<record id="action_report_realestate_property" model="ir.actions.report">
+    <field name="name">Property</field>
+    <field name="model">realestate.property</field>
+    <field name="report_type">qweb-pdf</field>
+    <field name="report_name">real_estate_victor.report_realestate_property</field>
+    <field name="report_file">real_estate_victor.report_realestate_property</field>
+    <field name="print_report_name">object.reference</field>
+    <field name="binding_model_id" ref="model_realestate_property"/>
+    <field name="binding_type">report</field>
+</record>
+
+<template id="report_realestate_property">
+    <t t-call="web.html_container">
+        <t t-foreach="docs" t-as="o">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <h2>Property: <t t-esc="o.name"/></h2>
+                    <p>Reference: <t t-esc="o.reference"/></p>
+                    <p>Price: <t t-esc="o.price"/></p>
+                    
+                    <div class="mb-3">
+                        <strong>Description:</strong> <span t-field="o.desc"/>
+                    </div>
+
+                    <h4>Images</h4>
+                    <t t-if="o.image_ids">
+                        <table class="table table-sm o_main_table">
+                            <thead>
+                                <tr>
+                                    <th>Image</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                <t t-foreach="o.image_ids" t-as="image">
+                                    <tr>
+                                        <td>
+                                            <img t-if="image.image" t-att-src="image_data_uri(image.image)" style="max-height: 100px; max-width: 100px;"/>
+                                        </td>
+                                        <td t-field="image.name"/>
+                                    </tr>
+                                </t>
+                            </tbody>
+
+                        </table>
+                    </t>
+                </div>
+
+            </t>
+        </t>
+    </t>
+
+
+</template>
+
+</odoo>
