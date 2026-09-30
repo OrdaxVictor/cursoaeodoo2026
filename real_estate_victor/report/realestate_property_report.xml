@@ -42,7 +42,7 @@
                                         <td>
                                             <img t-if="image.image" t-att-src="image_data_uri(image.image)" style="max-height: 100px; max-width: 100px;"/>
                                         </td>
-                                        <td t-field="image.name"/>
+                                        <td><span t-field="image.name"/></td>
                                     </tr>
                                 </t>
                             </tbody>

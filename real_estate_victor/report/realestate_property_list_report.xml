@@ -31,10 +31,10 @@
                         <tbody>
                             <t t-foreach="docs" t-as="o">
                                 <tr>
-                                    <td t-field="o.name"/>
-                                    <td t-field="o.reference"/>
-                                    <td t-field="o.price"/>
-                                    <td t-field="o.stage_id"/>
+                                    <td><span t-field="o.name"/></td>
+                                    <td><span t-field="o.reference"/></td>
+                                    <td><span t-field="o.price"/></td>
+                                    <td><span t-field="o.stage_id"/></td>
                                 </tr>
                             </t>
                         </tbody>
