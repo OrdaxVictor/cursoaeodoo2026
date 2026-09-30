@@ -6,7 +6,7 @@ class RealEstateVisitLotCreate(models.TransientModel):
     _description = "Wizard to create visits by lots on specific property"
 
     start_date = fields.Datetime(string="Start Date", required=True)
-        end_date = fields.Datetime(string="End Date", required=True)
+    end_date = fields.Datetime(string="End Date", required=True)
 
     def action_visit_lot_create(self):
         vals_list = []
