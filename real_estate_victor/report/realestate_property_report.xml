@@ -27,7 +27,7 @@
     <field name="binding_type">report</field>
 </record>
 
-<template id="report_realestate_property">
+<template id="realestate_property_report">
     <t t-call="web.html_container">
         <t t-foreach="docs" t-as="o">
             <t t-call="web.external_layout">

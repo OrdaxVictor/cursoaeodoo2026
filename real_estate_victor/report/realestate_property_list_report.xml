@@ -11,7 +11,7 @@
         <field name="binding_type">report</field>
     </record>
 
-   <template id="report_realestate_property_simple">
+   <template id="realestate_property_list_report">
     <t t-call="web.html_container">
         <t t-call="web.external_layout">
         <div class="page">
