@@ -5,8 +5,8 @@ class RealEstateVisitChangeStatus(models.TransientModel):
     _name = "realestate.visit.change.status"
     _description = "Wizard to change the status of visits"
 
-    status = fields.Many2one(
-        comodel_name="realestate.visit.status",
+    status = fields.Selection(
+        selection=lambda self: self.env["realestate.visit"]._fields["status"].selection,
         string="Status",
         required=True
     )
