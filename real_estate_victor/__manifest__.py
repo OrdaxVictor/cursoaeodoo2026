@@ -22,6 +22,7 @@
         'views/realestate_menuitems.xml',
         'report/realestate_property_report.xml',
         'report/realestate_property_list_report.xml',
+        'report/realestate_contract_report.xml',
         ],
     "installable": True,
 }
