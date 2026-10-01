@@ -19,6 +19,7 @@
         'views/realestate_contract_view.xml',
         'wizard/realestate_property_change_stage_views.xml',
         'wizard/realestate_visit_lot_create_views.xml',
+        'wizard/realestate_visit_change_status_views.xml',
         'views/realestate_menuitems.xml',
         'report/realestate_property_report.xml',
         'report/realestate_property_list_report.xml',
