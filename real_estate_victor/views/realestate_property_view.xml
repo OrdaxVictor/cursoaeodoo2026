@@ -34,6 +34,7 @@
                 <sheet>
                     <div class="oe_button_box" name="button_box">
                         <button name="action_open_visits" type="object" string="Visits" class="oe_stat_button" icon="fa-calendar">
+                        <button name="action_open_contracts" type="object" string="Contracts" class="oe_stat_button" icon="fa-file">
                         <field name="visit_count" string="Visits" widget="statinfo"/>
                         </button>
                         <button name="action_open_incidences" type="object" class="oe_stat_button" icon="fa-exclamation-triangle">

@@ -41,6 +41,12 @@ class RealEstateProperty(models.Model):
         string="Visits"
     )
 
+    contract_ids = fields.One2many(
+            comodel_name="realestate.contract",
+            inverse_name="property_id",
+            string="Contracts"
+        )
+
     internal_note = fields.Text(string="Internal Note", company_dependent=True)
     company_id = fields.Many2one(
         comodel_name="res.company",
@@ -71,6 +77,8 @@ class RealEstateProperty(models.Model):
 
     visit_count = fields.Integer(string="Visit Count", compute="_compute_visit_count")
 
+    contract_count = fields.Integer(string="Contract Count", compute="_compute_contract_count")
+
     incidence_count = fields.Integer(string="Incidence Count", compute="_compute_incidence_count")
 
     _reference_uniq = models.Constraint(
@@ -90,6 +98,10 @@ class RealEstateProperty(models.Model):
             # visit_ids = len(self.env['realestate.visit'].search([('property_id', '=', record.id)]))
             # visit_ids = self.env['realestate.visit'].search_count([('property_id', '=', record.id)])
             record.visit_count = len(record.visit_ids)
+
+    def _compute_contract_count(self):
+        for record in self:
+            record.contract_count = len(record.contract_ids)
 
     def _compute_incidence_count(self):
         for record in self:
@@ -170,3 +182,15 @@ class RealEstateProperty(models.Model):
             'offer': self.price
         }
         self.env['realestate.offer'].create(vals)
+
+
+    def action_open_contracts(self):
+        action = {
+            'type': 'ir.actions.act_window',
+            'name': 'Contracts',
+            'res_model': 'realestate.contract',
+            'view_mode': 'list,form',
+            'domain': [('property_id', '=', self.id)],
+            'context': {'default_property_id': self.id}
+        }
+        return action
