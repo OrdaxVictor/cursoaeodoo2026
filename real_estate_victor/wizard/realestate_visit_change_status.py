@@ -15,7 +15,7 @@ class RealEstateVisitChangeStatus(models.TransientModel):
         visits = self.env["realestate.visit"].browse(
             self.env.context.get("active_ids", [])
         )
-        visits.write({"status": self.status.id})
+        visits.write({"status": self.status})
         return {
             "type": "ir.actions.act_window",
             "name": "Visits",
