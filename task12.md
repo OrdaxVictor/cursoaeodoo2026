@@ -3,7 +3,7 @@
 ## Modulo original
 
 * Dejar preparado el `button_box` vacio en el formulario del contrato, para poder
-  colgarle botones desde el modulo nuevo (es el punto de extension que usa el core).
+  colgarle botones desde el modulo nuevo.
 
 ## Modulo nuevo
 
@@ -26,14 +26,14 @@
 
 ## Herencia de metodos
 
-* Heredar el metodo `create` del contrato para asignarle el nombre con una secuencia
+* Heredar el método `create` del contrato para asignarle el nombre con una secuencia
   (`CTR/2026/00001`).
-  Ojo con la compañia de la secuencia: si el usuario es de otra compañia,
+  Ojo con la compañía de la secuencia: si el usuario es de otra compañía,
   `next_by_code` no la encuentra y el nombre sale vacio.
 
 ## Herencia por delegacion
 
-* En el modulo original, crear `realestate.agent` con
+* En el módulo original, crear `realestate.agent` con
   `_inherits = {'res.partner': 'partner_id'}` y probar a añadir a su vista campos de
   `res.partner` (`street`, `city`, `country_id`).
 * Añadir `agent_id` a la propiedad y mostrarlo en su formulario.
