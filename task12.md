@@ -41,6 +41,6 @@
 ## Deberes
 
 * Heredar `action_cancelled` del contrato para cancelar sus pedidos de venta.
-* Boton en el contrato que confirme los pedidos y cree la factura.
+* Boton en el contrato que confirme los pedidos y cree la factura. (en pedidos el método para crear las facturas en base al pedido es _create_invoices())
 * Delegacion en un segundo contacto: `realestate.owner` (propietario) con `_inherits`
   y `owner_id` en la propiedad.
