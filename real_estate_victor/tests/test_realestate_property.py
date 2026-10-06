@@ -21,12 +21,12 @@ class TestRealEstateProperty(common.TransactionCase):
         self.visit_2 = self.Visit.create({
             'property_id': self.property_1.id,
             'date': '2024-06-02 10:00:00',
-            'status': 'D'
+            'status': 'P'
         })
         self.visit_3 = self.Visit.create({
             'property_id': self.property_1.id,
             'date': '2024-06-03 10:00:00',
-            'status': 'D'
+            'status': 'P'
         })
 
         self.offer_1 = self.Offer.create({
