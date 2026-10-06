@@ -19,7 +19,7 @@
 
 # Tests
 
-Crear los tests en `tests/` (con su `__init__.py`), sobre `TransactionCase`.
+Crear los tests en `tests/` sobre `TransactionCase`.
 
 Hacer tests de los siguientes métodos del modelo `realestate.property`:
 
