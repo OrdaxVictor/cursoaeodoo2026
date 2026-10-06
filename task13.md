@@ -1,0 +1,39 @@
+# Context
+
+* En el listado de propiedades, que por defecto aparezcan solo las disponibles:
+  aplicar el filtro "Available" desde el contexto de la acción
+  (`search_default_availability`).
+* En el smartbutton de Visitas de la propiedad, que el listado salga filtrado
+  por defecto por las visitas pendientes (borrador o planificadas): añadir el
+  filtro al search de visitas y aplicarlo desde el contexto de la acción que
+  devuelve el smartbutton (`search_default_...`). Si no lo hacía ya, al crear
+  la visita desde ahí debe coger la propiedad (`default_property_id`).
+
+# Mixin
+
+* Añadir chatter al modelo de propiedad: heredar `mail.thread` y
+  `mail.activity.mixin`, añadir `mail` a las dependencias del módulo y poner
+  `<chatter/>` en el formulario.
+* Hacer rastreables en el chatter la etapa (`stage_id`), la disponibilidad y el
+  precio; comprobar que cada cambio deja su mensaje.
+
+# Tests
+
+Crear los tests en `tests/` (con su `__init__.py`), sobre `TransactionCase`.
+
+Hacer tests de los siguientes métodos del modelo `realestate.property`:
+
+* `action_create_visit`
+* `action_accept_best_offer`
+* `_compute_next_visit_date`
+
+Y del modelo `realestate.visit`:
+
+* `_cron_finish_visits`
+
+# Deberes
+
+* Añadir chatter también al contrato, con su estado (`state`) rastreable.
+* Tests de los constraints: la oferta con importe negativo (`_check_amount`) y
+  el contrato con fecha de fin anterior a la de inicio (`_check_dates`) deben
+  lanzar `ValidationError` (usar `assertRaises`).
