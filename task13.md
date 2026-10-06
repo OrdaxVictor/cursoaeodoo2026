@@ -29,10 +29,6 @@ Hacer tests de los siguientes métodos del modelo `realestate.property`:
 * `action_accept_best_offer`
 * `_compute_next_visit_date`
 
-Y del modelo `realestate.visit`:
-
-* `_cron_finish_visits`
-
 # Deberes
 
 * Añadir chatter también al contrato, con su estado (`state`) rastreable.
