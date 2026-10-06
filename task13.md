@@ -4,10 +4,8 @@
   aplicar el filtro "Available" desde el contexto de la acción
   (`search_default_availability`).
 * En el smartbutton de Visitas de la propiedad, que el listado salga filtrado
-  por defecto por las visitas pendientes (borrador o planificadas): añadir el
-  filtro al search de visitas y aplicarlo desde el contexto de la acción que
-  devuelve el smartbutton (`search_default_...`). Si no lo hacía ya, al crear
-  la visita desde ahí debe coger la propiedad (`default_property_id`).
+  por defecto por las visitas programadas: aplicarlo desde el contexto de la acción que
+  devuelve el smartbutton (`search_default_...`).
 
 # Mixin
 
