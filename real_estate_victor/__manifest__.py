@@ -10,6 +10,7 @@
         "web",],
     "data": [
         'data/ir_cron.xml',
+        'data/ir_sequence.xml',
         'security/realestate_security.xml',
         'security/ir.model.access.csv',
         'views/realestate_property_view.xml',
@@ -17,6 +18,8 @@
         'views/realestate_category_view.xml',
         'views/realestate_offer_view.xml',
         'views/realestate_contract_view.xml',
+        'views/realestate_agent_view.xml',
+        'views/realestate_owner_view.xml',
         'wizard/realestate_property_change_stage_views.xml',
         'wizard/realestate_visit_lot_create_views.xml',
         'wizard/realestate_visit_change_status_views.xml',

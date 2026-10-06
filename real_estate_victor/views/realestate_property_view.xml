@@ -64,6 +64,8 @@
                                 Details
                             </p><br />
                             <field name="user_id" widget="many2one_avatar_user"/>
+                            <field name="agent_id"/>
+                            <field name="owner_id"/>
                             <field name="price" widget="monetary"/>
                             <field name="currency_id" invisible="1"/>
                             <field name="next_visit_date"/>

@@ -17,6 +17,16 @@ class RealEstateProperty(models.Model):
     reference = fields.Char(string="Reference", copy=False)
     availability = fields.Boolean(string="Availability", default=True)
 
+    agent_id = fields.Many2one(
+        comodel_name="realestate.agent",
+        string="Agent"
+    )
+
+    owner_id = fields.Many2one(
+        comodel_name="realestate.owner",
+        string="Owner"
+    )
+
     currency_id = fields.Many2one(
         comodel_name="res.currency",
         string="Currency",

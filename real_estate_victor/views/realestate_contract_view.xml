@@ -14,6 +14,7 @@
                     <field name="status" widget="statusbar"/>
                 </header>
                 <sheet>
+                    <div class="oe_button_box" name="button_box"/>
                     <widget name="web_ribbon" title="Reserved" bg_color="text-bg-success" invisible="status != 'R'"/>
                     <group name="group_top">
                         <group name="group_left">

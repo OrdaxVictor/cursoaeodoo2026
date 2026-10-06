@@ -8,3 +8,5 @@ from . import realestate_contract
 from . import realestate_property_stage
 from . import realestate_property_image
 from . import realestate_property_incidence
+from . import realestate_agent
+from . import realestate_owner

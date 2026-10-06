@@ -65,6 +65,15 @@ class RealEstateContract(models.Model):
             else:
                 record.with_bail = False
 
+    @api.model_create_multi
+    def create(self, vals_list):
+        for vals in vals_list:
+           if not vals.get('name'):
+                vals['name'] = self.env['ir.sequence'].next_by_code('realestate.contract')
+        res = super().create(vals_list)
+        # res. lo que sea
+        return res
+
     def _compute_ongoing_days(self):
         for record in self:
             if record.start_date:
