@@ -170,7 +170,7 @@ class RealEstateProperty(models.Model):
             'res_model': 'realestate.visit',
             'view_mode': 'kanban,list,form',
             'domain': [('property_id', '=', self.id)],
-            'context': {'default_property_id': self.id}
+            'context': {'default_property_id': self.id, 'search_default_scheduled': 1}
         }
         return action
 

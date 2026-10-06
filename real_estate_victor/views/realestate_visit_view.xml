@@ -150,6 +150,7 @@
                 <field name="property_id"/>
                 <field name="partner_id"/>
                 <field name="status"/>
+                <filter name="scheduled" string="Scheduled" domain="[('status','=','S')]"/>
             </search>
         </field>
     </record>
