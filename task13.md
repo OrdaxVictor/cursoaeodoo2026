@@ -16,6 +16,8 @@
   `<chatter/>` en el formulario.
 * Hacer rastreables en el chatter la etapa (`stage_id`), la disponibilidad y el
   precio; comprobar que cada cambio deja su mensaje.
+* Al pulsar algún botón (p. ej. el de reservar la propiedad), enviar un mensaje
+  al chatter con `message_post`.
 
 # Tests
 
