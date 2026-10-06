@@ -6,6 +6,7 @@ from odoo.exceptions import ValidationError
 class RealEstateContract(models.Model):
     _name = 'realestate.contract'
     _description = 'RealEstateContract'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     name = fields.Char(string='Contract', copy=False)
     type = fields.Selection([('R', 'Rent'), ('S', 'Sale')], string='Type')
@@ -19,7 +20,7 @@ class RealEstateContract(models.Model):
     end_date = fields.Date(string='End date')
     rent = fields.Float(string='Rent')
     bail = fields.Float(string='Bail')
-    status = fields.Selection([('D', 'Draft'), ('E', 'Ended'), ('C', 'Canceled'), ('O', 'Ongoing')], string='Status', default='D')
+    status = fields.Selection([('D', 'Draft'), ('E', 'Ended'), ('C', 'Canceled'), ('O', 'Ongoing')], string='Status', default='D', tracking=True)
 
     duration_days = fields.Integer(string="Duration (Days)", compute="_compute_duration_days", store=True)
 

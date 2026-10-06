@@ -193,7 +193,11 @@ class RealEstateProperty(models.Model):
             'date': fields.Datetime.now(),
             'offer': self.price
         }
-        self.env['realestate.offer'].create(vals)
+        offer = self.env['realestate.offer'].create(vals)
+        offer.message_post_with_source('mail.message_origin_link',
+                                        render_values={'self':offer, 'origin': self},
+                                        subtype_xmlid='mail.mt_note')
+        offer.action_send()
         
 
 

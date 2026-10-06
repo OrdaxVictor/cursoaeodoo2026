@@ -45,6 +45,7 @@
                     <hr />
 
                 </sheet>
+                <chatter/>
             </form>    
         </field>
     </record>
