@@ -31,13 +31,13 @@ class TestRealEstateProperty(common.TransactionCase):
 
         self.offer_1 = self.Offer.create({
             'property_id': self.property_1.id,
-            'amount': 95000.0,
+            'offer': 95000.0,
             'status': 'S'
         })
 
         self.offer_2 = self.Offer.create({
             'property_id': self.property_1.id,
-            'amount': 97000.0,
+            'offer': 97000.0,
             'status': 'S'
         })
 
@@ -47,7 +47,7 @@ class TestRealEstateProperty(common.TransactionCase):
 
     def test_action_accept_best_offer(self):
         self.property_1.action_accept_best_offer()
-        self.assertEqual(self.offer_2.state, 'accepted')
-        self.assertEqual(self.offer_1.state, 'sent')
+        self.assertEqual(self.offer_2.status, 'A')
+        self.assertEqual(self.offer_1.status, 'S')
         self.assertFalse(self.property_1.availability)
-        self.assertTrue(self.offer_2.amount > self.offer_1.amount)
+        self.assertTrue(self.offer_2.offer > self.offer_1.offer)
