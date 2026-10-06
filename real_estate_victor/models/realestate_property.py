@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class RealEstateProperty(models.Model):
     _name = 'realestate.property'
     _description = 'RealEstateProperty'
+    _inherit = ["mail.thread", "mail.activity.mixin"]
 
     active = fields.Boolean(string="Active", default=True)
     name = fields.Char(string='Property')
@@ -13,7 +14,7 @@ class RealEstateProperty(models.Model):
     user_id = fields.Many2one(comodel_name="res.users", string="Manager", default=lambda self: self.env.user.id)
     category_id = fields.Many2one(comodel_name="realestate.category", string="Category")
 
-    price = fields.Monetary(string="Price", currency_field='currency_id')
+    price = fields.Monetary(string="Price", currency_field='currency_id', tracking=True)
     reference = fields.Char(string="Reference", copy=False)
     availability = fields.Boolean(string="Availability", default=True)
 
@@ -36,7 +37,8 @@ class RealEstateProperty(models.Model):
     stage_id = fields.Many2one(
         comodel_name="realestate.property.stage",
         string="Stage",
-        group_expand="_read_group_stage_ids"
+        group_expand="_read_group_stage_ids",
+        tracking=True
     )
 
     image_ids = fields.One2many(
@@ -136,7 +138,6 @@ class RealEstateProperty(models.Model):
 
 
     def action_create_visit(self):
-        import pdb;pdb.set_trace()
         vals = {
             'property_id': self.id,
             'date': fields.Datetime.now(),
@@ -149,6 +150,7 @@ class RealEstateProperty(models.Model):
         best_offer = self.env['realestate.offer'].search([('property_id', '=', self.id),('state', '=', 'sent')], order='amount desc', limit=1)
         if best_offer:
             best_offer.action_accept()
+        self.message_post(body="Best offer has been accepted.")
 
 
     def action_delete_refused_offers(self):
@@ -192,6 +194,7 @@ class RealEstateProperty(models.Model):
             'offer': self.price
         }
         self.env['realestate.offer'].create(vals)
+        
 
 
     def action_open_contracts(self):

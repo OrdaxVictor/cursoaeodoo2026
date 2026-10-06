@@ -3,11 +3,12 @@
     "name": "Real Estate - Victor",
     "version": "19.0.1.0.1",
     "category": "Custom",
-    "author": "Víctor León",
+    "author": "Víctor",
     "license": "AGPL-3",
     "depends": [
         "base",
-        "web",],
+        "web",
+        "mail"],
     "data": [
         'data/ir_cron.xml',
         'data/ir_sequence.xml',
