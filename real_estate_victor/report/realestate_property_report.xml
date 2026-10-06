@@ -100,7 +100,7 @@
                                     <td><span t-field="visit.date"/></td>
                                     <td><span t-field="visit.partner_id"/></td>
                                     <td><span t-field="visit.phone"/></td>
-                                    <td><span t-field="visit.state"/></td>
+                                    <td><span t-field="visit.status"/></td>
                                 
                                 </tr>
                             </t>

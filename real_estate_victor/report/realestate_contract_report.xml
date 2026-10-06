@@ -61,7 +61,7 @@
                     <strong>Deposit:</strong> <span t-field="o.deposit"/>
                 </div>
                 <div class="col-4">
-                    <strong>Status:</strong> <span t-field="o.state"/>
+                    <strong>Status:</strong> <span t-field="o.status"/>
                 </div>
                 
                 </div>

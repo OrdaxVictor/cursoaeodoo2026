@@ -25,7 +25,7 @@ class RealEstateVisit(models.Model):
     def _onchange_partner_id(self):
         if self.partner_id:
             self.phone = self.partner_id.phone
-            self.personal_email = self.partner_id.email
+            self.email =self.partner_id.email
 
     def _cron_finish_visits(self):
         visits = self.env['realestate.visit'].search(

@@ -101,7 +101,7 @@ class RealEstateProperty(models.Model):
     def _inverse_next_visit_date(self):
         for record in self:
             if record.next_visit_date:
-                scheduled_visits = record.visit_ids.filtered(lambda visit: visit.state == 'scheduled')
+                scheduled_visits = record.visit_ids.filtered(lambda visit: visit.status == 'S')
                 if scheduled_visits:
                     scheduled_visits[0].date = record.next_visit_date
 
@@ -147,14 +147,14 @@ class RealEstateProperty(models.Model):
 
 
     def action_accept_best_offer(self):
-        best_offer = self.env['realestate.offer'].search([('property_id', '=', self.id),('status', '=', 'S')], order='amount desc', limit=1)
+        best_offer = self.env['realestate.offer'].search([('property_id', '=', self.id),('status', '=', 'S')], order='offer desc', limit=1)
         if best_offer:
-            best_offer.action_accept()
+            best_offer.action_accepted()
         self.message_post(body="Best offer has been accepted.")
 
 
     def action_delete_refused_offers(self):
-        refused_offers = self.env['realestate.offer'].search([('property_id', '=', self.id),('state', '=', 'refused')])
+        refused_offers = self.env['realestate.offer'].search([('property_id', '=', self.id),('status', '=', 'R')])
         refused_offers.unlink()
 
 
@@ -197,7 +197,7 @@ class RealEstateProperty(models.Model):
         offer.message_post_with_source('mail.message_origin_link',
                                         render_values={'self':offer, 'origin': self},
                                         subtype_xmlid='mail.mt_note')
-        offer.action_send()
+        offer.action_sent()
         
 
 
