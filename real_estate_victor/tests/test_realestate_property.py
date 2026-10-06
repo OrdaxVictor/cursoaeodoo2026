@@ -16,29 +16,29 @@ class TestRealEstateProperty(common.TransactionCase):
         self.visit_1 = self.Visit.create({
             'property_id': self.property_1.id,
             'date': '2024-06-01 10:00:00',
-            'state': 'scheduled'
+            'status': 'S'
         })
         self.visit_2 = self.Visit.create({
             'property_id': self.property_1.id,
             'date': '2024-06-02 10:00:00',
-            'state': 'draft'
+            'status': 'D'
         })
         self.visit_3 = self.Visit.create({
             'property_id': self.property_1.id,
             'date': '2024-06-03 10:00:00',
-            'state': 'draft'
+            'status': 'D'
         })
 
         self.offer_1 = self.Offer.create({
             'property_id': self.property_1.id,
             'amount': 95000.0,
-            'state': 'sent'
+            'status': 'S'
         })
 
         self.offer_2 = self.Offer.create({
             'property_id': self.property_1.id,
             'amount': 97000.0,
-            'state': 'sent'
+            'status': 'S'
         })
 
     def test_action_create_visit(self):
