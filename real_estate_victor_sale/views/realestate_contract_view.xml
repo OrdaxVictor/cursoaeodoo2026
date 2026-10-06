@@ -2,7 +2,7 @@
 <odoo>
     <record id="realestate_contract_sale_form" model="ir.ui.view">
         <field name="name">realestate.contract.sale.form</field>
-        <field name="inherit_id" ref="real_estate_victor.realestate_contract_form_view"/>
+        <field name="inherit_id" ref="real_estate_victor.view_realestate_contract_form"/>
         <field name="model">realestate.contract</field>
         <field name="arch" type="xml">
             <div name="button_box" position="inside">
