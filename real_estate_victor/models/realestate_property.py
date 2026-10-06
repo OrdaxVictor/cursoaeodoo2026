@@ -147,7 +147,7 @@ class RealEstateProperty(models.Model):
 
 
     def action_accept_best_offer(self):
-        best_offer = self.env['realestate.offer'].search([('property_id', '=', self.id),('state', '=', 'sent')], order='amount desc', limit=1)
+        best_offer = self.env['realestate.offer'].search([('property_id', '=', self.id),('status', '=', 'S')], order='amount desc', limit=1)
         if best_offer:
             best_offer.action_accept()
         self.message_post(body="Best offer has been accepted.")
