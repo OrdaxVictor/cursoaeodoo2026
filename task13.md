@@ -32,6 +32,3 @@ Hacer tests de los siguientes métodos del modelo `realestate.property`:
 # Deberes
 
 * Añadir chatter también al contrato, con su estado (`state`) rastreable.
-* Tests de los constraints: la oferta con importe negativo (`_check_amount`) y
-  el contrato con fecha de fin anterior a la de inicio (`_check_dates`) deben
-  lanzar `ValidationError` (usar `assertRaises`).
