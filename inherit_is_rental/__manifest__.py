@@ -6,10 +6,9 @@
     'description': 'Module for managing real estate sales',
     'author': 'Víctor',
     'category': 'Real Estate',
-    'depends': ['real_estate_victor','sale'],
+    'depends': ['real_estate_victor_sale'],
     'data': [
         'views/product_template_view.xml',
-        'views/sale_order_view.xml',
     ],
     'installable': True,
 }
